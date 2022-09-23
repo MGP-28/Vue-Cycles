@@ -17,7 +17,7 @@
                 </li>
                 <li>
                     <h3>Country</h3>
-                    <h1>{{this.location.country}}</h1>
+                    <h1>{{this.user.location.country}}</h1>
                 </li>
             </ul>
         </div>
@@ -67,7 +67,7 @@
 
 <style scoped>
     .cardContainer{
-        max-width: 300px;
+        width: 400px;
         padding: 30px;
         border: solid 0.5px;
         box-sizing: border-box;
