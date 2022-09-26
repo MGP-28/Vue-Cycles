@@ -12,12 +12,16 @@ export default {
 </script>
 
 <template>
-  <div>
+  <div class="app-main-container">
     <MGPList></MGPList>
     <MgpUserGrid></MgpUserGrid>
   </div>
 </template>
 
 <style scoped>
-
+.app-main-container{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
 </style>

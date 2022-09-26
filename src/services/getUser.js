@@ -1,7 +1,7 @@
 async function getRandomUsers() {
  
     const baseUrl = 'https://randomuser.me/api/';
-    const numberUsers = 8;
+    const numberUsers = 9;
     const url = `${baseUrl}/?results=${numberUsers}`
 
     return await fetch(url)
