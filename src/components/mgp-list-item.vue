@@ -1,19 +1,20 @@
 <template>
     <li>
         <span>{{task.description}}</span>
-        <input type="checkbox" v-model="isDone" @change="changedTaskStatus">
+        <input type="checkbox" v-model="localTask.isDone" @change="changedTaskStatus">
     </li>
 </template>
 
 <script>
+    import {Task} from '../models/task'
     export default {
         name: "MgpListItem",
         props: {
-            task: Object
+            task: Task
         },
         data(){
             return{
-                isDone: null
+                localTask: Task
             }
         },
         // watch:{
@@ -23,14 +24,14 @@
         // },
         methods:{
             changedTaskStatus: function(){
-                this.$emit("changed-task-status", this.isDone)
+                this.$emit("changed-task-status", this.localTask.isDone)
             }
         },
         emits:[
             "changed-task-status"
         ],
         created(){
-            this.isDone = this.task.isDone
+            this.localTask = this.task
         }
     }
 </script>
@@ -44,9 +45,5 @@
         width: 100%;
         border-bottom: solid 0.5px white;
         padding: 3px;
-    }
-
-    span{
-
     }
 </style>

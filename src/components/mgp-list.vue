@@ -11,15 +11,16 @@
 
 <script>
     import MgpListItem from './mgp-list-item.vue';
+    import {Task} from '../models/task'
 
     export default {
     name: "MGPList",
     data() {
         return {
             tasks: [
-                {description: "Never gonna give you up", isDone: false},
-                {description: "Never gonna let you down", isDone: true},
-                {description: "Never gonna run around and desert you", isDone: false}
+                new Task("Never gonna give you up"),
+                new Task("Never gonna let you down", true),
+                new Task("Never gonna run around and desert you"),
             ]
         }
     },
